@@ -23,7 +23,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         #region Jump
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
