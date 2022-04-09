@@ -119,12 +119,12 @@ TextureImporter:
       name: Shark_0
       rect:
         serializedVersion: 2
-        x: 73
+        x: 181
         y: 307
-        width: 311
-        height: 166
+        width: 203
+        height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
