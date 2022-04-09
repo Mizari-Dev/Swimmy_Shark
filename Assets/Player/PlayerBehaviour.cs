@@ -5,18 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public float life;
     public int score;
+    public BarrierBehavior barrierBehavior;
 
     public float jumpForce;
 
     private bool jump;
     private Rigidbody2D rb;
+    private bool starting = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
     }
 
     // Update is called once per frame
@@ -25,7 +27,16 @@ public class PlayerBehaviour : MonoBehaviour
         #region Jump
         if (Input.GetButtonDown("Jump"))
         {
-            jump = true;
+            if (!starting)
+            {
+                starting = true;
+                barrierBehavior.StartGame();
+                rb.gravityScale = 1;
+                jump = true;
+            } else
+            {
+                jump = true;
+            }
         }
         #endregion
 
