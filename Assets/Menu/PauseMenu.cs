@@ -16,8 +16,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            Time.timeScale = 0;
             canvas.enabled = !canvas.enabled;
+            Time.timeScale = (canvas.enabled ? 0 : 1);
         }
     }
 
