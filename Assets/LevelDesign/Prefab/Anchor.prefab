@@ -48,14 +48,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hooksPrefabList:
-  - {fileID: 4446137308864302967, guid: 7baeb5b7898650c4cbd76d6db5b33498, type: 3}
+  - {fileID: 1924597286017522607, guid: 892e61448c48a81458a1b59fba8e5233, type: 3}
+  - {fileID: 4719048038303373745, guid: 7a96f231d58725243bdcbb6a8aa42cc0, type: 3}
+  - {fileID: 4510433476044783584, guid: d30a2f248cb1ee44690ca6ad6c28fe84, type: 3}
   rocksPrefabList:
-  - {fileID: 4446137308864302967, guid: 7baeb5b7898650c4cbd76d6db5b33498, type: 3}
+  - {fileID: 1095786433143034897, guid: d65323e1fd8fbec408e3ee867bd65a8d, type: 3}
+  - {fileID: 7290029928592091668, guid: 98ef773b5ea5fe34e9e4b2549bcc1ce6, type: 3}
+  - {fileID: 487006810981654565, guid: 47bd76215f05365419d3cc7953529241, type: 3}
   spawnPosUp: {fileID: 5747353977950843422}
   spawnPosDown: {fileID: 5747353976714911158}
   speed: 1
-  speedMultiplier: 0.01
-  spawnRate: 4
+  speedMultiplier: 0.02
+  spawnRate: 6
   begin: 0
 --- !u!114 &-3553547679047835910
 MonoBehaviour:
@@ -94,7 +98,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5747353976714911158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.23, z: -0.003530942}
+  m_LocalPosition: {x: 7.19, y: -3.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,7 +129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5747353977950843422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.76, z: -0.003530942}
+  m_LocalPosition: {x: 7.19, y: 3.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

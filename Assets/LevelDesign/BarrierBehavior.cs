@@ -31,8 +31,18 @@ public class BarrierBehavior : MonoBehaviour
 
     IEnumerator SpawnBarrier(Vector3 _spawnPosUp, Vector3 _spawnPosDown, int _temp, int _temp1)
     {
-        Instantiate(hooksPrefabList[_temp], _spawnPosUp, Quaternion.identity, this.transform);
-        Instantiate(rocksPrefabList[_temp1], _spawnPosDown, Quaternion.identity, this.transform);
+        Vector2 spawnPos = new Vector2(UnityEngine.Random.Range(-1, 2), UnityEngine.Random.Range(-1, 2));
+        GameObject hook = Instantiate(hooksPrefabList[_temp], _spawnPosUp, Quaternion.identity, this.transform);
+        GameObject rock = Instantiate(rocksPrefabList[_temp1], _spawnPosDown, Quaternion.identity, this.transform);
+
+        Vector2 posHook = hook.transform.position;
+        Vector2 posRock = rock.transform.position;
+
+        posHook += spawnPos;
+        posRock += spawnPos;
+
+        hook.transform.position = posHook;
+        rock.transform.position = posRock;
 
         yield return new WaitForSeconds(1.0f);
     }
