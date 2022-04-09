@@ -14,10 +14,10 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetButtonDown("Cancel"))
         {
             Time.timeScale = 0;
-            canvas.enabled = true;
+            canvas.enabled = !canvas.enabled;
         }
     }
 
