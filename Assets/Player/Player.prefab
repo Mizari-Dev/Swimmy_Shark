@@ -138,4 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   barrierBehavior: {fileID: 0}
+  scoreTxt: {fileID: 0}
   jumpForce: 4.5

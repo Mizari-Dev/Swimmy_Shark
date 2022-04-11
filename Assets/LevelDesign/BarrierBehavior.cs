@@ -7,6 +7,7 @@ public class BarrierBehavior : MonoBehaviour
 {
     public List<GameObject> hooksPrefabList = new List<GameObject>();
     public List<GameObject> rocksPrefabList = new List<GameObject>();
+    public GameObject scoreCollision;
 
     private Scrolling[] componentsList;
     [SerializeField]
@@ -34,15 +35,20 @@ public class BarrierBehavior : MonoBehaviour
         Vector2 spawnPos = new Vector2(UnityEngine.Random.Range(-1, 2), UnityEngine.Random.Range(-1, 2));
         GameObject hook = Instantiate(hooksPrefabList[_temp], _spawnPosUp, Quaternion.identity, this.transform);
         GameObject rock = Instantiate(rocksPrefabList[_temp1], _spawnPosDown, Quaternion.identity, this.transform);
+        GameObject scoring = Instantiate(scoreCollision, _spawnPosDown, Quaternion.identity, this.transform);
 
         Vector2 posHook = hook.transform.position;
         Vector2 posRock = rock.transform.position;
+        Vector2 posScoring = scoring.transform.position;
 
         posHook += spawnPos;
         posRock += spawnPos;
+        posScoring += spawnPos;
+        posScoring.y = 0;
 
         hook.transform.position = posHook;
         rock.transform.position = posRock;
+        scoring.transform.position = posScoring;
 
         yield return new WaitForSeconds(1.0f);
     }

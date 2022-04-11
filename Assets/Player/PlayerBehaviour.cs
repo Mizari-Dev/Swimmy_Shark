@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public int score;
+    public int score = 0;
     public BarrierBehavior barrierBehavior;
+    public TMP_Text scoreTxt;
 
     public float jumpForce;
 
@@ -52,6 +54,8 @@ public class PlayerBehaviour : MonoBehaviour
             transform.rotation = Quaternion.identity;
         }
         #endregion
+
+        scoreTxt.text = $"{score}";
     }
 
     void FixedUpdate()
@@ -64,6 +68,14 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.collider.CompareTag("Decor"))
         {
             Death();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Scoring"))
+        {
+            score++;
         }
     }
 
@@ -80,6 +92,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Death()
     {
+        CrossScene.Information = scoreTxt.text;
         SceneManager.LoadScene("GameOver");
     }
+}
+
+public static class CrossScene
+{
+    public static string Information { get; set; }
 }

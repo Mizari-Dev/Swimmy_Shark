@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Decor
+  - Scoring
   layers:
   - Default
   - TransparentFX

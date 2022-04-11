@@ -97,4 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff3402129fb95944a9d2605597196f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrier: {fileID: 5747353975938065011, guid: 3870cc5268ea4b146928e492197ea1fa, type: 3}
+  speed: 1
+  playerBehaviour: {fileID: -6309118275380500138, guid: 6d0d437b4c5d78441b0a58ad5449d497, type: 3}
