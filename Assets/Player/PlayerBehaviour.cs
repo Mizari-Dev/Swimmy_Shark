@@ -80,6 +80,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Death()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("GameOver");
     }
 }
