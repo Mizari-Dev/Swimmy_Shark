@@ -220,6 +220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f15455974e518194dbb062414ef54341, type: 3}
+--- !u!1 &201334088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4619038917768701797, guid: 3870cc5268ea4b146928e492197ea1fa, type: 3}
+  m_PrefabInstance: {fileID: 5747353977799289196}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &416055408
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,6 +977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anchor
       objectReference: {fileID: 0}
+    - target: {fileID: 5747353975938065011, guid: 3870cc5268ea4b146928e492197ea1fa, type: 3}
+      propertyPath: spawnPosMid
+      value: 
+      objectReference: {fileID: 201334088}
     - target: {fileID: 5747353975938065011, guid: 3870cc5268ea4b146928e492197ea1fa, type: 3}
       propertyPath: scoreCollision
       value: 
