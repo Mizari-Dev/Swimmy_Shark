@@ -29,15 +29,12 @@ public class PlayerBehaviour : MonoBehaviour
         #region Jump
         if (Input.GetButtonDown("Jump"))
         {
+            jump = true;
             if (!starting)
             {
                 starting = true;
                 barrierBehavior.StartGame();
                 rb.gravityScale = 1;
-                jump = true;
-            } else
-            {
-                jump = true;
             }
         }
         #endregion
@@ -63,6 +60,10 @@ public class PlayerBehaviour : MonoBehaviour
         Jump();
     }
 
+    /// <summary>
+    /// Quand le requin se prend un rocher ou un ameçon, il meurt
+    /// </summary>
+    /// <param name="collision">Obstacle</param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Decor"))
@@ -71,14 +72,22 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Ajoute 1 au score quand le requin passe dans la zone invisible
+    /// </summary>
+    /// <param name="collision">Zone invisible</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Scoring"))
         {
             score++;
+            Destroy(collision.gameObject);
         }
     }
 
+    /// <summary>
+    /// Quand le joueur appuis sur la touche "espace", le requin saute
+    /// </summary>
     private void Jump()
     {
         if (jump)
@@ -90,14 +99,23 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Quand le requin meurt, on charge la scène "GameOver" et on fait passer le score d'une scène à l'autre
+    /// </summary>
     public void Death()
     {
-        CrossScene.Information = scoreTxt.text;
+        CrossScene.Score = scoreTxt.text;
         SceneManager.LoadScene("GameOver");
     }
 }
 
+/// <summary>
+/// Permet de faire passer des infos d'une scène à l'autre
+/// </summary>
 public static class CrossScene
 {
-    public static string Information { get; set; }
+    /// <summary>
+    /// Score à faire passer
+    /// </summary>
+    public static string Score { get; set; }
 }

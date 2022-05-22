@@ -10,6 +10,6 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score.text = CrossScene.Information;
+        score.text = CrossScene.Score;
     }
 }

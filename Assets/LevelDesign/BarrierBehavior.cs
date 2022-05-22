@@ -13,6 +13,8 @@ public class BarrierBehavior : MonoBehaviour
     [SerializeField]
     private GameObject spawnPosUp;
     [SerializeField]
+    private GameObject spawnPosMid;
+    [SerializeField]
     private GameObject spawnPosDown;
 
 
@@ -30,12 +32,12 @@ public class BarrierBehavior : MonoBehaviour
         rnd = new System.Random();
     }
 
-    IEnumerator SpawnBarrier(Vector3 _spawnPosUp, Vector3 _spawnPosDown, int _temp, int _temp1)
+    IEnumerator SpawnBarrier(Vector3 _spawnPosUp, Vector3 _spawnPosMid, Vector3 _spawnPosDown, int _temp, int _temp1)
     {
         Vector2 spawnPos = new Vector2(UnityEngine.Random.Range(-1, 2), UnityEngine.Random.Range(-1, 2));
         GameObject hook = Instantiate(hooksPrefabList[_temp], _spawnPosUp, Quaternion.identity, this.transform);
         GameObject rock = Instantiate(rocksPrefabList[_temp1], _spawnPosDown, Quaternion.identity, this.transform);
-        GameObject scoring = Instantiate(scoreCollision, _spawnPosDown, Quaternion.identity, this.transform);
+        GameObject scoring = Instantiate(scoreCollision, _spawnPosMid, Quaternion.identity, this.transform);
 
         Vector2 posHook = hook.transform.position;
         Vector2 posRock = rock.transform.position;
@@ -44,7 +46,6 @@ public class BarrierBehavior : MonoBehaviour
         posHook += spawnPos;
         posRock += spawnPos;
         posScoring += spawnPos;
-        posScoring.y = 0;
 
         hook.transform.position = posHook;
         rock.transform.position = posRock;
@@ -73,13 +74,13 @@ public class BarrierBehavior : MonoBehaviour
             if (timer>timerTemp)
             {
                 timerTemp += spawnRate;
-                StartCoroutine(SpawnBarrier(spawnPosUp.transform.localPosition, spawnPosDown.transform.localPosition, temp, temp1));
+                StartCoroutine(SpawnBarrier(spawnPosUp.transform.localPosition, spawnPosMid.transform.localPosition, spawnPosDown.transform.localPosition, temp, temp1));
             }                
         }
     }
 
     public void StartGame()
     {
-        begin = !begin;
+        begin = true;
     }
 }
