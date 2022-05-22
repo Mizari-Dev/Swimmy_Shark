@@ -35,36 +35,13 @@ public class BarrierBehavior : MonoBehaviour
         rnd = new System.Random();
     }
 
-<<<<<<< HEAD
-    IEnumerator SpawnBarrier(Vector3 _spawnPosUp, Vector3 _spawnPosMid, Vector3 _spawnPosDown, int _temp, int _temp1)
-=======
-
-    // Initialisation de la coroutine
-
-    /// <summary>
-    /// On lui donne les points de spawn des obstacles, et les indexs prit aleatoirement
-    /// </summary>
-    /// <param name="_spawnPosUp"></param>
-    /// <param name="_spawnPosDown"></param>
-    /// <param name="_indexHookList"></param>
-    /// <param name="_indexRockList"></param>
-    /// <returns></returns>
-    IEnumerator SpawnBarrier(Vector3 _spawnPosUp, Vector3 _spawnPosDown, int _indexHookList, int _indexRockList)
->>>>>>> 13decab404d16a33f32aab7b7caa01d4ff896d6a
+    IEnumerator SpawnBarrier(Vector3 _spawnPosUp, Vector3 _spawnPosMid, Vector3 _spawnPosDown, int _hookIndex, int _rockindex)
     {
         //translate les points de position des spawnPos sur y et y
         Vector2 spawnPos = new Vector2(UnityEngine.Random.Range(-1, 2), UnityEngine.Random.Range(-1, 2));
-<<<<<<< HEAD
-        GameObject hook = Instantiate(hooksPrefabList[_temp], _spawnPosUp, Quaternion.identity, this.transform);
-        GameObject rock = Instantiate(rocksPrefabList[_temp1], _spawnPosDown, Quaternion.identity, this.transform);
+        GameObject hook = Instantiate(hooksPrefabList[_hookIndex], _spawnPosUp, Quaternion.identity, this.transform);
+        GameObject rock = Instantiate(rocksPrefabList[_rockindex], _spawnPosDown, Quaternion.identity, this.transform);
         GameObject scoring = Instantiate(scoreCollision, _spawnPosMid, Quaternion.identity, this.transform);
-=======
-
-        
-        GameObject hook = Instantiate(hooksPrefabList[_indexHookList], _spawnPosUp, Quaternion.identity, this.transform);
-        GameObject rock = Instantiate(rocksPrefabList[_indexRockList], _spawnPosDown, Quaternion.identity, this.transform);
-        GameObject scoring = Instantiate(scoreCollision, _spawnPosDown, Quaternion.identity, this.transform);
->>>>>>> 13decab404d16a33f32aab7b7caa01d4ff896d6a
 
         Vector2 posHook = hook.transform.position;
         Vector2 posRock = rock.transform.position;
